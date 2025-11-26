@@ -20,7 +20,7 @@ node {
 
   stage('Quality Gate') {
     // This will fail the build if the Quality Gate is not passed
-    timeout(time: 5, unit: 'MINUTES') {
+    timeout(time: 15, unit: 'MINUTES') {
       def qg = waitForQualityGate abortPipeline: true
       echo "Quality Gate status: ${qg.status}"
     }
